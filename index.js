@@ -426,3 +426,4 @@ for (let i = 1; i <= rows; i++) {
     // Print the completed row
     console.log(rowStr);
 }
+ // upcoming Dom munuplilation 
