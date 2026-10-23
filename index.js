@@ -14,7 +14,7 @@ let number2 = 123483;
 // BigInt
 
 let bigIntNumber = 1234567890123456789012345678901234567890n;
-let bigInt = BigInt("1234567890123456789012345678901234567890");
+let bigInt= BigInt("1234567890123456789012345678901234567890");
 
 // boolean
 
@@ -97,7 +97,7 @@ const constantvariable = "value";
 // var
 
 var varVariable = "value";
-varVariable = "new value";
+varVariable= "new value";
 
 var varVariable = "new value2";
 
@@ -127,9 +127,9 @@ let globalVar = "I am a global variable";
 
 
 // function scope
-function myFunction() {
-    console.log(globalVar);
-}
+function myFunction(){
+ console.log(globalVar);
+} 
 
 myFunction()
 
@@ -137,7 +137,7 @@ myFunction()
 
 // function scope 
 
-function addNumber() {
+function addNumber(){
     let number1 = 10;
     let number2 = 20;
     let sum = number1 + number2;
@@ -152,7 +152,7 @@ addNumber();
 {
     let city = "New York";
     let country = "USA";
-
+    
 }
 
 
@@ -210,7 +210,7 @@ let user = isLoggedIn && showDashboard
 let guest = false;
 let userName = "derrick"
 
-let user2 = guest || userName;
+let user2 = guest || userName ;
 
 console.log(`the user output is ${user}`);
 
@@ -266,7 +266,7 @@ if (password !== "password123") {
 
 // if else if else 
 
-if (score >= 80) {
+if(score >= 80) {
     console.log("You got in Grad A");
 } else if (score >= 70) {
     console.log("You got in Grad B");
@@ -286,9 +286,9 @@ if (day === "Staturday" && day === "Sunday") {
 }
 
 if (!isLoggedIn && !showDashboard) {
-    console.log("No access to thes page");
-} else {
-    console.log(`Well come back ${name}`);
+   console.log("No access to thes page");
+} else  {
+   console.log(`Well come back ${name}`);
 }
 
 
@@ -300,16 +300,16 @@ const days = "sun";
 
 switch (days) {
     case "Sun":
-    case "Sat":
+      case "Sat":
         console.log("It's the weekend");
-        break;
+           break;
 
     case "Wed":
-    case "Fri":
-        console.log("It's a workshoop day");
-        break;
-    default:
-        console.log("We are on a Normal day");
+        case "Fri":
+            console.log("It's a workshoop day");
+            break;
+default: 
+console.log("We are on a Normal day");
 }
 
 
@@ -318,7 +318,7 @@ switch (days) {
 
 // for loop 
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i<= 5; i++) {
     console.log(`The number is ${i}`);
 }
 
@@ -338,92 +338,68 @@ while (balance < 2000) {
     console.log(`We need ${month} Months to have a balance that is greater than 2,000 rwf when saving`);
 }
 
-//do while 
-//Math,random->generates numbers by decimals
-//Math.floor->generates whole number and round off the numbers
+ let math = Math.floor(Math.random() * 10);
 
-let pin
-do {
+ console.log(math);
+
+
+ let pin 
+
+ do {
     pin = Math.floor(Math.random() * 10000);
-    console.log(`the pin is ${pin}`);
-} while (pin < 1000)
+    console.log(`The pin is ${pin}`);
+ } while (pin < 10);
 
-//for .. of works with arrays
-//const fruit = ['apple', 'banana', 'mango']
-//for (const fruit of fruits) {
-// console.log(fruit.toUpperCase())
-//}
 
-// changing the first letter to capital letter
-const fruits1 = ['apple', 'banana', 'mango'];
 
-for (const [index, fruit] of fruits.entries()) {
-    // 1. Assign to the array elements: fruits[index] (not fruit[index])
-    // 2. Target the individual string variable: fruit (not fruits)
-    // 3. Fix the capitalization of .toUpperCase() as a function call
-    fruits[index] = fruit.charAt(0).toUpperCase() + fruit.slice(1);
+//  for.. of works with arrays and strings
+
+let fruits2 = ["Apple", "Banana", "Orange", "Mango", "Pineapple"];
+
+for (const [index, value] of fruits2.entries()) {
+    if (index === 0) {
+        console.log(value.charAt(0).toUpperCase()+ value.slice(1));
+    } 
 }
 
-console.log(fruits);
-// Output: ['Apple', 'Banana', 'Mango']
+// for.. in works with objects
 
-
-//for.. in works with objects
-const student = { name: 'Grace', cohort: 3, track: "Frontend" }
+const student = { name: "Grace", cohort: 3, track: "Frontend" }
 for (const key in student) {
-    console.log(`${key}: ${student[key]}`)
+  console.log(`${key}: ${student[key]}`)
 }
 
 
-//break and continue
+//  
 
-//break
-for (const number of [1, 2, 3, 12, 43]) {
-    if (number > 10) {
+for (const number of [1,2,8,12, 43]) {
+    if (number > 10 ) {
         console.log(`found ${number}`);
         break;
     }
 }
 
-//continue
+
 for (let i = 0; i <= 10; i++) {
     if (i % 2 === 0) continue;
     console.log(i);
 }
 
-for (let i = 0; i <= 5; i++) {
-    if (i === 3) continue;
-    console.log(`the number is ${i}`);
+for (let i = 1; i <=5; i++) {
+    if (i === 2 && i === 3) continue;
+    console.log(`The number is ${i}`);
 }
 
-//nested loops
+let i = 0
+while (i < 5) {
+  console.log(i)
+  i++
+}
+
 for (let row = 1; row <= 3; row++) {
-    let line = ""
-    for (let col = 1; col <= 3; col++) {
-        line += `${row * col}\t`
-    }
-    console.log(line)
+  let line = ""
+  for (let col = 1; col <= 3; col++) {
+    line += `${row * col}\t`
+  }
+  console.log(line)
 }
-
-// draw a pyramid
-const rows = 5; // Change this number to make the pyramid taller or shorter
-
-// Outer loop controls the current row
-for (let i = 1; i <= rows; i++) {
-    let rowStr = "";
-
-    // Inner loop 1: Adds leading spaces to center the pyramid
-    for (let j = 1; j <= rows - i; j++) {
-        rowStr += " ";
-    }
-
-    // Inner loop 2: Adds the stars
-    // (2 * i - 1) ensures an odd number of stars per row (1, 3, 5...)
-    for (let k = 1; k <= 2 * i - 1; k++) {
-        rowStr += "*";
-    }
-
-    // Print the completed row
-    console.log(rowStr);
-}
- // upcoming Dom munuplilation 
